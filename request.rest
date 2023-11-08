@@ -1,0 +1,29 @@
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/65489d1b0933c7394587651e
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name" : "udin",
+    "email": "udin@gmail.com",
+    "password" : "12345"
+}
+
+
+###
+PATCH http://localhost:5000/users/654b475e461325ed2f160e89
+Content-Type: application/json
+
+{
+    "name" : "Budi",
+    "email": "Budi@gmail.com",
+    "gender" : "male"
+}
+
+
+###
+DELETE http://localhost:5000/users/654b475e461325ed2f160e89
