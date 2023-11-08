@@ -1,10 +1,13 @@
-GET http://localhost:5000/todo/api/users
+GET http://localhost:5000/api/users
+
+###
+GET http://localhost:5000/api/todos
 
 ###
 GET http://localhost:5000/users/65489d1b0933c7394587651e
 
 ###
-POST http://localhost:5000/todo/api/users
+POST http://localhost:5000/api/users
 Content-Type: application/json
 
 {
@@ -12,6 +15,17 @@ Content-Type: application/json
     "email": "john@gmail.com",
     "password" : "12345"
 }
+
+
+###
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+    "task" : "Membersihkan rumah",
+    "status" : false
+}
+
 
 
 ###
@@ -26,4 +40,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:5000/users/654b475e461325ed2f160e89
+DELETE http://localhost:5000/users/54b475e461325ed2f160e89
