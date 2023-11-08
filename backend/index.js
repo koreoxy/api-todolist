@@ -6,6 +6,10 @@ import UserRoute from './routes/UserRoute.js';
 import TodoRoute from './routes/TodoRoute.js';
 import AuthRoute from './routes/AuthRoute.js';
 import cookieParser from 'cookie-parser';
+import path from 'path';
+
+// DYNAMIC PATH
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -26,7 +30,13 @@ app.use('/api', UserRoute);
 app.use('/api', TodoRoute);
 app.use('/api/auth', AuthRoute);
 
-app.listen(5000, () => console.log('Server berjalan...'));
+app.use(express.static(path.join(__dirname, '/frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
+});
+
+app.listen(3000, () => console.log('Server berjalan...'));
 
 // MIDDLEWARE HANDDLE ERROR
 app.use((err, req, res, next) => {
