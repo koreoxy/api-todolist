@@ -1,5 +1,6 @@
 import User from '../models/UserModel.js';
 import bcryptjs from 'bcryptjs';
+import { errorHandler } from '../utils/error.js';
 
 // GET ALL USER
 export const getUsers = async (req, res) => {
@@ -37,15 +38,44 @@ export const createUser = async (req, res) => {
 };
 
 // UPDATE USER
-export const updateUser = async (req, res) => {
+// export const updateUser = async (req, res) => {
+//   try {
+//     const updatedUser = await User.updateOne(
+//       { _id: req.params.id },
+//       { $set: req.body }
+//     );
+//     res.status(200).json(updatedUser);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// };
+
+export const updateUser = async (req, res, next) => {
+  if (req.user.id !== req.params.id)
+    return next(errorHandler(401, 'You can onyl update you own account'));
+
   try {
-    const updatedUser = await User.updateOne(
-      { _id: req.params.id },
-      { $set: req.body }
+    if (req.body.password) {
+      req.body.password = bcryptjs.hashSync(req.body.password, 10);
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+        },
+      },
+      { new: true }
     );
-    res.status(200).json(updatedUser);
+
+    const { password, ...rest } = updatedUser._doc;
+
+    res.status(200).json({ rest });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    next(error);
   }
 };
 

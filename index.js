@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import UserRoute from './routes/UserRoute.js';
 import TodoRoute from './routes/TodoRoute.js';
 import AuthRoute from './routes/AuthRoute.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -18,6 +19,9 @@ db.once('open', () => console.log('Database Connected to MongoDB'));
 
 app.use(cors());
 app.use(express.json());
+
+app.use(cookieParser());
+
 app.use('/api', UserRoute);
 app.use('/api', TodoRoute);
 app.use('/api/auth', AuthRoute);
