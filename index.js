@@ -16,6 +16,6 @@ db.once('open', () => console.log('Database Connected to MongoDB'));
 
 app.use(cors());
 app.use(express.json());
-app.use(UserRoute);
+app.use('/todo/api', UserRoute);
 
 app.listen(5000, () => console.log('Server berjalan...'));
