@@ -1,6 +1,7 @@
 import User from '../models/UserModel.js';
 import bcryptjs from 'bcryptjs';
 import { errorHandler } from '../utils/error.js';
+import Todo from '../models/TodoModel.js';
 
 // GET ALL USER
 export const getUsers = async (req, res) => {
@@ -52,7 +53,7 @@ export const createUser = async (req, res) => {
 
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.id)
-    return next(errorHandler(401, 'You can onyl update you own account'));
+    return next(errorHandler(401, 'You can only update you own account'));
 
   try {
     if (req.body.password) {
@@ -86,5 +87,19 @@ export const deleteUser = async (req, res) => {
     res.status(200).json(deletedUser);
   } catch (error) {
     res.status(400).json({ message: error.message });
+  }
+};
+
+// GET USER TODO
+export const getUserTodo = async (req, res, next) => {
+  if (req.user.id === req.params.id) {
+    try {
+      const todos = await Todo.find({ userRef: req.params.id });
+      res.status(200).json(todos);
+    } catch (error) {
+      next(error);
+    }
+  } else {
+    return next(errorHandler(401, 'You can only view your own todo'));
   }
 };
