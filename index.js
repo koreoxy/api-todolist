@@ -22,6 +22,16 @@ app.use(express.json());
 
 app.use(cookieParser());
 
+app.get('/api', (req, res) => {
+  try {
+    const successMessage = 'API Response Success!';
+    res.status(200).json({ message: successMessage });
+  } catch (error) {
+    const errorMessage = 'Terjadi kesalahan dalam memproses permintaan.';
+    res.status(500).json({ error: errorMessage });
+  }
+});
+
 app.use('/api', UserRoute);
 app.use('/api', TodoRoute);
 app.use('/api/auth', AuthRoute);
