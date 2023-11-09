@@ -18,18 +18,18 @@ Base URL: https://api-todo-koreoxy.vercel.app/api/
     
 
 ## /api/todos
-**1. GET /todos**
+### 1. GET /todos
 - Mendapatkan Semua list todo
    - Metode : GET
    - Endpoint : /todos
    - Deskripsi : Mendapatkan semua list todo yang tersedia.
 
-Contoh HTTP Request:
+**Contoh HTTP Request:**
 ```
 GET https://api-todo-koreoxy.vercel.app/api/todos
 ```
 
-Contoh Respons:
+**Contoh Respons:**
 ```
 Status: 200 OK ✔️
 [
@@ -42,6 +42,33 @@ Status: 200 OK ✔️
         "updatedAt": "2023-11-08T15:36:15.873Z",
         "__v": 0
     },
+    {
+        "_id": "654bb0367a6513e30435aaff",
+        "task": "Belajar cara membuat game",
+        "status": false,
+        "userRef": "654bab7fc72713fbb9a1a531",
+        "createdAt": "2023-11-08T15:58:46.210Z",
+        "updatedAt": "2023-11-08T15:58:46.210Z",
+        "__v": 0
+    }
+]
+```
+
+### 2. GET /todos/:id
+- Mendapatkan todo berdasarkan id
+   - Metode : GET
+   - Endpoint : /todos/:id
+   - Deskripsi : Mendapatkan todo tertentu berdasarkan id.
+ 
+**Contoh HTTP Request:**
+```
+GET https://api-todo-koreoxy.vercel.app/api/todos/654bb0367a6513e30435aaff
+```
+
+**Contoh Respons:**
+```
+Status: 200 OK ✔️
+[
     {
         "_id": "654bb0367a6513e30435aaff",
         "task": "Belajar cara membuat game",
