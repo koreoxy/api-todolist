@@ -288,3 +288,39 @@ Status: 200 OK ✔️
 <hr>
 
 
+### 3. POST /users
+<details open>
+	<summary><b>Menambahkan User : </b></summary>
+	
+   - Metode : POST
+   - Endpoint : /users
+   - Deskripsi : Add atau menambahkan user list baru.
+
+**Contoh HTTP Request :**
+```
+POST https://api-todo-koreoxy.vercel.app/api/users
+Content-Type: application/json
+{
+  "name" : "User Baru",
+  "email": "userbaru@gmail.com",
+  "password": "12345"
+}
+```
+
+**Contoh Respons :**
+```json
+Status: 201 Created ✔️
+{
+  "name": "User Baru",
+  "email": "userbaru@gmail.com",
+  "password": "$2a$10$AQg0IaY.JOKjQYu0lRI.1.jAem9KbQQlpU/ROiNDlhjptkh33AuQe",
+  "_id": "654d1a51c73de23671f9961b",
+  "createdAt": "2023-11-09T17:43:45.114Z",
+  "updatedAt": "2023-11-09T17:43:45.114Z",
+  "__v": 0
+}
+```
+</details>
+
+<hr>
+
