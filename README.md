@@ -19,8 +19,23 @@ No      | /api/todos         |      /api/users   |  /api/auth          |
 |5      | DELETE /todos/:id  | DELETE /users/:id |                     |
 
 
+## Jump to
 - [/api/todos](#apitodos)
+  - [1. GET /todos](#1-get-todos)
+  - [2. GET /todos/:id](#2-get-todosid)
+  - [3. POST /todos](#3-post-todos)
+  - [4. PATCH /todos/:id](#4-patch-todosid)
+  - [5. DELETE /todos/:id](#5-delete-todosid)
 - [/api/users](#apiusers)
+  - [1. GET /users](#1-get-users)
+  - [2. GET /users/:id](#2-get-usersid)
+  - [3. POST /users](#3-post-users)
+  - [4. PATCH /users/:id](#4-patch-usersid)
+  - [5. DELETE /users/:id](#5-delete-usersid)
+- [/api/auth](#apiauth)
+  - [1. POST /auth/register](#1-post-authregister)
+  - [2. POST /auth/login](#2-post-authlogin)
+  
 
 <br>
 
