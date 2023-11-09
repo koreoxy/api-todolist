@@ -18,8 +18,12 @@ No      | /api/todos         |      /api/users   |  /api/auth          |
     
 
 ## /api/todos
+
 ### 1. GET /todos
-- Mendapatkan Semua list todo
+<details open>
+  <summary><b>Mendapatkan Semua list todo : </b></summary>
+
+ 
    - Metode : GET
    - Endpoint : /todos
    - Deskripsi : Mendapatkan semua list todo yang tersedia.
@@ -53,13 +57,15 @@ Status: 200 OK ✔️
     }
 ]
 ```
-
+</details>
 <hr>
 
 
 
 ### 2. GET /todos/:id
-- Mendapatkan todo berdasarkan id
+<details open>
+	<summary><b>Mendapatkan todo berdasarkan id : </b></summary>
+
    - Metode : GET
    - Endpoint : /todos/:id
    - Deskripsi : Mendapatkan todo tertentu berdasarkan id.
@@ -84,6 +90,7 @@ Status: 200 OK ✔️
     }
 ]
 ```
+</details>
 
 
 <hr>
@@ -91,7 +98,9 @@ Status: 200 OK ✔️
 
 
 ### 3. POST /todos
-- Menambahkan todo
+<details open>
+	<summary><b>Menambahkan todo : </b></summary>
+	
    - Metode : POST
    - Endpoint : /todos
    - Deskripsi : Add atau menambahkan todo list baru.
@@ -126,14 +135,16 @@ Status: 201 Created ✔️
   }
 ]
 ```
-
+</details>
 
 <hr>
 
 
 
 ### 4. PATCH /todos/:id
-- Update todo
+<details open>
+	<summary><b>Update todo : </b></summary>
+	
    - Metode : PATCH
    - Endpoint : /todos/:id
    - Deskripsi : Update atau memperbarui todo.
@@ -159,12 +170,16 @@ Status: 200 OK ✔️
   "matchedCount": 1
 }
 ```
+</details>
+
 
 <hr>
 
 
 ### 5. DELETE /todos/:id
-- Delete todo
+<details open>
+	<summary><b>Delete todo : </b></summary>
+	
    - Metode : DELETE
    - Endpoint : /todos/:id
    - Deskripsi : Delete atau menghapus todo.
@@ -182,5 +197,7 @@ Status: 200 OK ✔️
   "deletedCount": 1
 }
 ```
+</details>
+
 
 <hr>
