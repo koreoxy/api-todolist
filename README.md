@@ -30,7 +30,7 @@ GET https://api-todo-koreoxy.vercel.app/api/todos
 ```
 
 **Contoh Respons :**
-```
+```json
 Status: 200 OK ✔️
 [
     {
@@ -70,7 +70,7 @@ GET https://api-todo-koreoxy.vercel.app/api/todos/654bb0367a6513e30435aaff
 ```
 
 **Contoh Respons :**
-```
+```json
 Status: 200 OK ✔️
 [
     {
@@ -112,7 +112,7 @@ Content-Type: application/json
 
 
 **Contoh Respons :**
-```
+```json
 Status: 201 Created ✔️
 [
    {
@@ -149,7 +149,7 @@ Content-Type: application/json
 ```
 
 **Contoh Respons :**
-```
+```json
 Status: 200 OK ✔️
 {
   "acknowledged": true,
@@ -175,7 +175,7 @@ DELETE https://api-todo-koreoxy.vercel.app/api/todos/654bab7fc72713fbb9a1a531
 ```
 
 **Contoh Respons :**
-```
+```json
 Status: 200 OK ✔️
 {
   "acknowledged": true,
