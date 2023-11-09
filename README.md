@@ -8,13 +8,13 @@ Base URL: https://api-todo-koreoxy.vercel.app/api/
 
 
 ## Endpoints
-| /api/todos         |      /api/users   |  /api/auth          |
-|--------------------|-------------------|---------------------|
-| GET /todos         | GET /users        | POST /auth/register |
-| GET /todos/:id     | GET /users/:id    | POST /auth/login    |
-| POST /todos        | POST /users       |                     |
-| PATCH /todos/:id   | PATCH /users/:id  |                     |
-| DELETE /todos/:id  | DELETE /users/:id |                     |
+No      | /api/todos         |      /api/users   |  /api/auth          |
+|:-----:|--------------------|-------------------|---------------------|
+|1      | GET /todos         | GET /users        | POST /auth/register |
+|2      | GET /todos/:id     | GET /users/:id    | POST /auth/login    |
+|3      | POST /todos        | POST /users       |                     |
+|4      | PATCH /todos/:id   | PATCH /users/:id  |                     |
+|5      | DELETE /todos/:id  | DELETE /users/:id |                     |
     
 
 ## /api/todos
@@ -117,4 +117,33 @@ Status: 201 Created ✔️
 	"__v": 0
   }
 ]
+```
+
+
+### 4. PATCH /todos/:id
+- Update todo
+   - Metode : PATCH
+   - Endpoint : /todos/:id
+   - Deskripsi : Update atau memperbarui todo.
+
+**Contoh HTTP Request :**
+```
+PATCH https://api-todo-koreoxy.vercel.app/api/todos/654bab7fc72713fbb9a1a531
+Content-Type: application/json
+{
+  "task": "Update Todo Baru",
+  "status": false,
+}
+```
+
+**Contoh Respons :**
+```
+Status: 200 OK ✔️
+{
+  "acknowledged": true,
+  "modifiedCount": 1,
+  "upsertedId": null,
+  "upsertedCount": 0,
+  "matchedCount": 1
+}
 ```
