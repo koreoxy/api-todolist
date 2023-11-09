@@ -207,6 +207,7 @@ Status: 200 OK ✔️
 
 
 <br>
+<br>
 
 ## /api/users
 ### 1. GET /users
@@ -251,3 +252,39 @@ Status: 200 OK ✔️
 
 
 <hr>
+
+
+### 2. GET /users/:id
+<details open>
+	<summary><b>Mendapatkan User berdasarkan id :</b></summary>
+
+   - Metode : GET
+   - Endpoint : /users/:id
+   - Deskripsi : Mendapatkan user tertentu berdasarkan id.
+
+**Contoh HTTP Request :**
+```
+GET https://api-todo-koreoxy.vercel.app/api/users/654b64e2277400aa4ece38c3
+```
+
+**Contoh Respons :**
+```json
+Status: 200 OK ✔️
+{
+  "_id": "654b64e2277400aa4ece38c3",
+  "name": "baru1",
+  "email": "baru1@gmail.com",
+  "password": "$2a$10$SIw9El2CZuG1t.PDdK558epP7MC0R77Rl7cTdP44oQvooDbuSzXEi",
+  "createdAt": "2023-11-08T10:37:22.949Z",
+  "updatedAt": "2023-11-08T15:13:10.190Z",
+  "__v": 0
+}
+
+```
+
+</details>
+
+
+<hr>
+
+
