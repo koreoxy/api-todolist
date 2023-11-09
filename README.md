@@ -2,7 +2,7 @@
 
 
 ## Deskripsi
-API To-Do List ini memungkinkan pengguna untuk membuat, mengambil, memperbarui, dan menghapus daftar tugas (to-do lists) beserta login dan register user.
+API Todo List ini memungkinkan pengguna untuk membuat, mengambil, memperbarui, dan menghapus daftar tugas (to-do lists) beserta login dan register user.
 
 
 ## Endpoint Utama
@@ -407,3 +407,37 @@ Status: 200 OK ✔️
 ```
 </details>
 
+
+<br>
+<br>
+
+## /api/auth
+### 1. POST /auth/register
+<details open>
+	<summary><b>Register User : </b></summary>
+	
+   - Metode : POST
+   - Endpoint : /auth/register
+   - Deskripsi : jika user belum memiliki akun user tersebut dapat melakukan register atau mendaftar.
+
+**Contoh HTTP Request :**
+```
+POST https://api-todo-koreoxy.vercel.app/api/auth/register
+Content-Type: application/json
+{
+  "name" : "User Daftar",
+  "email": "userdaftar@gmail.com",
+  "password": "12345"
+}
+```
+
+**Contoh Respons User berhasil Daftar :**
+```json
+Status: 201 Created ✔️
+{
+  "User berhasil di daftarkan!!"
+}
+```
+</details>
+
+<hr>
