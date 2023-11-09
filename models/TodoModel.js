@@ -12,7 +12,7 @@ const Todo = mongoose.Schema(
     },
     userRef: {
       type: String,
-      required: true,
+      // required: true,
     },
     // userId: {
     //   type: mongoose.Schema.Types.ObjectId,
