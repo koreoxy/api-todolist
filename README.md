@@ -54,6 +54,10 @@ Status: 200 OK ✔️
 ]
 ```
 
+<hr>
+
+
+
 ### 2. GET /todos/:id
 - Mendapatkan todo berdasarkan id
    - Metode : GET
@@ -80,6 +84,10 @@ Status: 200 OK ✔️
     }
 ]
 ```
+
+
+<hr>
+
 
 
 ### 3. POST /todos
@@ -120,6 +128,10 @@ Status: 201 Created ✔️
 ```
 
 
+<hr>
+
+
+
 ### 4. PATCH /todos/:id
 - Update todo
    - Metode : PATCH
@@ -147,3 +159,28 @@ Status: 200 OK ✔️
   "matchedCount": 1
 }
 ```
+
+<hr>
+
+
+### 5. DELETE /todos/:id
+- Delete todo
+   - Metode : DELETE
+   - Endpoint : /todos/:id
+   - Deskripsi : Delete atau menghapus todo.
+
+**Contoh HTTP Request :**
+```
+DELETE https://api-todo-koreoxy.vercel.app/api/todos/654bab7fc72713fbb9a1a531
+```
+
+**Contoh Respons :**
+```
+Status: 200 OK ✔️
+{
+  "acknowledged": true,
+  "deletedCount": 1
+}
+```
+
+<hr>
