@@ -24,12 +24,12 @@ Base URL: https://api-todo-koreoxy.vercel.app/api/
    - Endpoint : /todos
    - Deskripsi : Mendapatkan semua list todo yang tersedia.
 
-**Contoh HTTP Request:**
+**Contoh HTTP Request :**
 ```
 GET https://api-todo-koreoxy.vercel.app/api/todos
 ```
 
-**Contoh Respons:**
+**Contoh Respons :**
 ```
 Status: 200 OK ✔️
 [
@@ -60,12 +60,12 @@ Status: 200 OK ✔️
    - Endpoint : /todos/:id
    - Deskripsi : Mendapatkan todo tertentu berdasarkan id.
  
-**Contoh HTTP Request:**
+**Contoh HTTP Request :**
 ```
 GET https://api-todo-koreoxy.vercel.app/api/todos/654bb0367a6513e30435aaff
 ```
 
-**Contoh Respons:**
+**Contoh Respons :**
 ```
 Status: 200 OK ✔️
 [
@@ -78,5 +78,39 @@ Status: 200 OK ✔️
         "updatedAt": "2023-11-08T15:58:46.210Z",
         "__v": 0
     }
+]
+```
+
+
+### 3. POST /todos
+- Menambahkan todo
+   - Metode : POST
+   - Endpoint : /todos
+   - Deskripsi : Add atau menambahkan todo list baru.
+
+**Contoh HTTP Request :**
+```
+POST https://api-todo-koreoxy.vercel.app/api/todos
+Content-Type: application/json
+{
+  "task": "Todo Baru",
+  "status": false,
+  "userRef": "654bab7fc72713fbb9a1a531"
+}
+```
+
+**Contoh Respons :**
+```
+Status: 201 Created ✔️
+[
+   {
+	"task": "Todo Baru",
+	"status": false,
+	"userRef": "654bab7fc72713fbb9a1a531",
+	"_id": "654cf9ebb2e620de719bccaa",
+	"createdAt": "2023-11-09T15:25:31.262Z",
+	"updatedAt": "2023-11-09T15:25:31.262Z",
+	"__v": 0
+  }
 ]
 ```
