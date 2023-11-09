@@ -344,7 +344,7 @@ Content-Type: application/json
   "password": "updatepassword"
 }
 ```
-> [!NOTE]
+> [!IMPORTANT]
 > - Untuk mengupdate data user, harus login terlebih dahulu menggunakan data user yang mau di update.
 > - login user melalui endpoint `/api/auth/login` menggunakan method `POST`.
 > - data `"name"` `"email"` `"password"` optional, tidak harus mengupdate semua data pada user.
@@ -375,11 +375,35 @@ Status: 401 Error ✖️
   "message": "Unauthorized"
 }
 ```
-> [!IMPORTANT]
+> [!NOTE]
 > jika mendapatkan respons seperti contoh diatas, login terlebih dahulu melalui endpoint `/api/auth/login`.
 
 </details>
 
 
 <hr>
+
+
+### 5. DELETE /users/:id
+<details open>
+	<summary><b>Delete User : </b></summary>
+	
+   - Metode : DELETE
+   - Endpoint : /users/:id
+   - Deskripsi : Delete atau menghapus user.
+
+**Contoh HTTP Request :**
+```
+DELETE https://api-todo-koreoxy.vercel.app/api/users/654d1a51c73de23671f9961b
+```
+
+**Contoh Respons :**
+```json
+Status: 200 OK ✔️
+{
+  "acknowledged": true,
+  "deletedCount": 1
+}
+```
+</details>
 
