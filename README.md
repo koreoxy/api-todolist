@@ -1,7 +1,9 @@
 # Dokumentasi Simple API Todo List
 
+
 ## Deskripsi
 API To-Do List ini memungkinkan pengguna untuk membuat, mengambil, memperbarui, dan menghapus daftar tugas (to-do lists) beserta login dan register user.
+
 
 ## Endpoint Utama
 Base URL: https://api-todo-koreoxy.vercel.app/api/
@@ -16,6 +18,7 @@ No      | /api/todos         |      /api/users   |  /api/auth          |
 |4      | PATCH /todos/:id   | PATCH /users/:id  |                     |
 |5      | DELETE /todos/:id  | DELETE /users/:id |                     |
     
+<br>
 
 ## /api/todos
 
@@ -197,6 +200,53 @@ Status: 200 OK ✔️
   "deletedCount": 1
 }
 ```
+</details>
+
+
+<hr>
+
+
+<br>
+
+## /api/users
+### 1. GET /users
+<details open>
+	<summary><b>Mendapatkan semua list User : </b></summary>
+
+   - Metode : GET
+   - Endpoint : /users
+   - Deskripsi : Mendapatkan semua list user yang tersedia.
+
+**Contoh HTTP Request :**
+```
+GET https://api-todo-koreoxy.vercel.app/api/users
+```
+
+**Contoh Respons :**
+```json
+Status: 200 OK ✔️
+[
+    {
+        "_id": "654b64e2277400aa4ece38c3",
+        "name": "baru1",
+        "email": "baru1@gmail.com",
+        "password": "$2a$10$SIw9El2CZuG1t.PDdK558epP7MC0R77Rl7cTdP44oQvooDbuSzXEi",
+        "createdAt": "2023-11-08T10:37:22.949Z",
+        "updatedAt": "2023-11-08T15:13:10.190Z",
+        "__v": 0
+    },
+    {
+        "_id": "654bab7fc72713fbb9a1a531",
+        "name": "Utaf",
+        "email": "Utaf@gmail.com",
+        "password": "$2a$10$dnlMDUM.uKRTtADMUxW4/u.An/77ttTDdkvcirvZkvm1JhyO/N7yC",
+        "createdAt": "2023-11-08T15:38:39.146Z",
+        "updatedAt": "2023-11-08T15:38:39.146Z",
+        "__v": 0
+    }
+]
+```
+
 </details>
 
 
