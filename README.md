@@ -8,9 +8,18 @@ Base URL: https://api-todo-koreoxy.vercel.app/api/
 
 
 ## Endpoints
+| /api/todos         |      /api/users   |  /api/auth          |
+|--------------------|-------------------|---------------------|
+| GET /todos         | GET /users        | POST /auth/register |
+| GET /todos/:id     | GET /users/:id    | POST /auth/login    |
+| POST /todos        | POST /users       |                     |
+| PATCH /todos/:id   | PATCH /users/:id  |                     |
+| DELETE /todos/:id  | DELETE /users/:id |                     |
+    
 
-**Get All Todo**
-1. Mendapatkan Semua list todo
+## /api/todos
+**1. GET /todos**
+- Mendapatkan Semua list todo
    - Metode : GET
    - Endpoint : /todos
    - Deskripsi : Mendapatkan semua list todo yang tersedia.
@@ -22,7 +31,7 @@ GET https://api-todo-koreoxy.vercel.app/api/todos
 
 Contoh Respons:
 ```
-Status: 200 OK
+Status: 200 OK ✔️
 [
     {
         "_id": "654baaefaa3431f77757f228",
