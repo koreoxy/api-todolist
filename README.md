@@ -122,6 +122,7 @@ Content-Type: application/json
 > [!NOTE]
 > data `"userRef"` optional, data tersebut boleh diisi dan boleh tidak.
 
+<br>
 
 **Contoh Respons :**
 ```json
@@ -321,6 +322,64 @@ Status: 201 Created ✔️
 }
 ```
 </details>
+
+<hr>
+
+
+### 4. PATCH /users/:id
+<details open>
+	<summary><b>Update User : </b></summary>
+	
+   - Metode : PATCH
+   - Endpoint : /users/:id
+   - Deskripsi : Update atau memperbarui user.
+
+**Contoh HTTP Request :**
+```
+PATCH https://api-todo-koreoxy.vercel.app/api/users/654d1a51c73de23671f9961b
+Content-Type: application/json
+{
+  "name": "user update",
+  "email": "emailupdategmail.com",
+  "password": "updatepassword"
+}
+```
+> [!NOTE]
+> - Untuk mengupdate data user, harus login terlebih dahulu menggunakan data user yang mau di update.
+> - login user melalui endpoint `/api/auth/login` menggunakan method `POST`.
+> - data `"name"` `"email"` `"password"` optional, tidak harus mengupdate semua data pada user.
+
+<br>
+
+**Contoh Respons Update user Berhasil :**
+```json
+Status: 200 OK ✔️
+{
+  "rest": {
+    "_id": "654d1a51c73de23671f9961b",
+    "name": "user update",
+    "email": "emailupdategmail.com",
+    "createdAt": "2023-11-09T17:43:45.114Z",
+    "updatedAt": "2023-11-09T17:56:02.653Z",
+    "__v": 0
+  }
+}
+```
+
+**Contoh Respons Gagal :**
+```json
+Status: 401 Error ✖️
+{
+  "success": false,
+  "statusCode": 401,
+  "message": "Unauthorized"
+}
+```
+> [!IMPORTANT]
+> jika mendapatkan respons seperti contoh diatas, login terlebih dahulu melalui endpoint `/api/auth/login`.
+
+</details>
+
 
 <hr>
 
