@@ -368,7 +368,7 @@ Status: 200 OK ✔️
 
 **Contoh Respons Gagal :**
 ```json
-Status: 401 Error ✖️
+Status: 401 Unauthorized ❌
 {
   "success": false,
   "statusCode": 401,
@@ -436,6 +436,61 @@ Content-Type: application/json
 Status: 201 Created ✔️
 {
   "User berhasil di daftarkan!!"
+}
+```
+</details>
+
+<hr>
+
+
+### 2. POST /auth/login
+<details open>
+	<summary><b>Login User : </b></summary>
+	
+   - Metode : POST
+   - Endpoint : /auth/login
+   - Deskripsi : setelah user berhasil register, user dapat melakukan login.
+
+**Contoh HTTP Request :**
+```
+POST https://api-todo-koreoxy.vercel.app/api/auth/login
+Content-Type: application/json
+{
+  "email": "userdaftar@gmail.com",
+  "password": "12345"
+}
+```
+
+**Contoh Respons User berhasil Login :**
+```json
+Status: 200 OK ✔️
+{
+  "_id": "654d2576108132b25d59a86e",
+  "name": "User Daftar",
+  "email": "userdaftar@gmail.com",
+  "createdAt": "2023-11-09T18:31:18.915Z",
+  "updatedAt": "2023-11-09T18:31:18.915Z",
+  "__v": 0
+}
+```
+
+**Contoh Respons User tidak ditemukan :**
+```json
+Status: 404 Not Found ❌
+{
+  "success": false,
+  "statusCode": 404,
+  "message": "User tidak ditemukan!"
+}
+```
+
+**Contoh Respons Password User salah :**
+```json
+Status: 401 Unauthorized ❌
+{
+  "success": false,
+  "statusCode": 401,
+  "message": "Password Salah!"
 }
 ```
 </details>
